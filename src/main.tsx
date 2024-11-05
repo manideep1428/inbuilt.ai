@@ -1,10 +1,10 @@
 // src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Popup from './Popup';
+import DefaultPopup from './components/DefaultPopup';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <Popup />
+        <DefaultPopup/>
     </React.StrictMode>
 );

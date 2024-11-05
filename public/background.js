@@ -1,7 +1,5 @@
-
+// background.js
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("Extension installed!");
-
     chrome.contextMenus.create({
         id: "aiTools",
         title: "AI Tools",
@@ -31,8 +29,6 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener((info) => {
-    console.log(`Context menu item clicked. Selection: ${info.selectionText}`);
-
     const selectedText = info.selectionText;
     let action = "";
 
@@ -51,11 +47,11 @@ chrome.contextMenus.onClicked.addListener((info) => {
     }
 
     chrome.storage.local.set({ selectedText, action }, () => {
-        if (chrome.runtime.lastError) {
-            console.error("Storage error:", chrome.runtime.lastError);
-        } else {
-            console.log(`Stored: ${selectedText} for action: ${action}`);
-            chrome.action.openPopup();
-        }
+        chrome.windows.create({
+            url: "index.html",
+            type: "popup",
+            width: 300,
+            height: 200,
+        });
     });
 });
