@@ -12,7 +12,8 @@
   "dependencies": {
     "@types/chrome": "^0.0.280",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vite-plugin-chrome-extension": "^0.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

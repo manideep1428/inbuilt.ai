@@ -1,12 +1,16 @@
 {
     "manifest_version": 3,
-    "name": "Text Selector Extension",
+    "name": "Astron AI",
     "version": "1.0",
-    "description": "Shows an icon when text is selected.",
+    "description": "Shows AI Tools on text selection.",
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "background.js",
+      "type":"module"
     },
-    "permissions": ["activeTab", "scripting", "contextMenus"],
+    "permissions": ["activeTab", "scripting", "contextMenus", "storage", "bookmarks"],
+    "action": {
+      "default_popup": "index.html"
+    },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
